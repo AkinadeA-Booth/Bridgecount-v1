@@ -1,0 +1,40 @@
+<div >
+  <h5>
+    Edit User Account
+  </h5>
+
+  <div>
+    <form action="/modify_user" method="post">
+      <div>
+        <label for="email_box">Email</label>
+        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
+      </div>
+      <div>
+        <label for="company_id_box">Company</label>
+        <input id="company_id_box" name="query_company_id" value="<%= @current_user.company_id %>">
+      </div>
+      <div>
+        <label for="company_admin_true_or_false_box">Company admin true or false</label>
+        <input id="company_admin_true_or_false_box" name="query_company_admin_true_or_false" type="checkbox" value="1" <%= "checked" if @current_user.company_admin_true_or_false %>>
+      </div>
+      <div>
+        <label for="photo_box">Photo</label>
+        <input id="photo_box" name="query_photo" value="<%= @current_user.photo %>">
+      </div>
+
+      <div>
+        <label for="password_box">Password</label>
+        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+      </div>
+    
+      <div>
+        <label for="password_confirmation_box">Password Confirmation</label>
+        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+      </div>
+
+      <button>
+        Update account
+      </button>
+    </form>
+  </div>
+</div>

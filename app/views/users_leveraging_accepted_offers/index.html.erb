@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all users leveraging accepted offers
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new users leveraging accepted offer
+    </h2>
+
+    <form action="/insert_users_leveraging_accepted_offer" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="accepted_offer_id_box">
+          Accepted offer
+        </label>
+
+        <input type="text" id="accepted_offer_id_box" name="query_accepted_offer_id">
+      </div>
+
+      <div>
+        <label for="number_of_times_redeemed_box">
+          Number of times redeemed
+        </label>
+
+        <input type="text" id="number_of_times_redeemed_box" name="query_number_of_times_redeemed">
+      </div>
+
+      <button>
+        Create users leveraging accepted offer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Accepted offer
+        </th>
+
+        <th>
+          Number of times redeemed
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_users_leveraging_accepted_offers.each do |a_users_leveraging_accepted_offer| %>
+      <tr>
+        <td>
+          <%= a_users_leveraging_accepted_offer.id %>
+        </td>
+
+        <td>
+          <%= a_users_leveraging_accepted_offer.user_id %>
+        </td>
+
+        <td>
+          <%= a_users_leveraging_accepted_offer.accepted_offer_id %>
+        </td>
+
+        <td>
+          <%= a_users_leveraging_accepted_offer.number_of_times_redeemed %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_users_leveraging_accepted_offer.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_users_leveraging_accepted_offer.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/users_leveraging_accepted_offers/<%= a_users_leveraging_accepted_offer.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

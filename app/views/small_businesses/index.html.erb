@@ -1,0 +1,166 @@
+<div>
+  <div>
+    <h1>
+      List of all small businesses
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new small business
+    </h2>
+
+    <form action="/insert_small_business" method="post">
+      <div>
+        <label for="small_business_name_box">
+          Small business name
+        </label>
+
+        <input type="text" id="small_business_name_box" name="query_small_business_name">
+      </div>
+
+      <div>
+        <label for="small_business_description_box">
+          Small business description
+        </label>
+
+        <textarea id="small_business_description_box" name="query_small_business_description" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="small_business_location_box">
+          Small business location
+        </label>
+
+        <input type="text" id="small_business_location_box" name="query_small_business_location">
+      </div>
+
+      <div>
+        <label for="small_business_phone_number_box">
+          Small business phone number
+        </label>
+
+        <input type="text" id="small_business_phone_number_box" name="query_small_business_phone_number">
+      </div>
+
+      <div>
+        <label for="small_business_photo_box">
+          Small business photo
+        </label>
+
+        <input type="text" id="small_business_photo_box" name="query_small_business_photo">
+      </div>
+
+      <div>
+        <label for="small_business_type_box">
+          Small business type
+        </label>
+
+        <input type="text" id="small_business_type_box" name="query_small_business_type">
+      </div>
+
+      <button>
+        Create small business
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Small business name
+        </th>
+
+        <th>
+          Small business description
+        </th>
+
+        <th>
+          Small business location
+        </th>
+
+        <th>
+          Small business phone number
+        </th>
+
+        <th>
+          Small business photo
+        </th>
+
+        <th>
+          Small business type
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_small_businesses.each do |a_small_business| %>
+      <tr>
+        <td>
+          <%= a_small_business.id %>
+        </td>
+
+        <td>
+          <%= a_small_business.small_business_name %>
+        </td>
+
+        <td>
+          <%= a_small_business.small_business_description %>
+        </td>
+
+        <td>
+          <%= a_small_business.small_business_location %>
+        </td>
+
+        <td>
+          <%= a_small_business.small_business_phone_number %>
+        </td>
+
+        <td>
+          <%= a_small_business.small_business_photo %>
+        </td>
+
+        <td>
+          <%= a_small_business.small_business_type %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_small_business.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_small_business.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/small_businesses/<%= a_small_business.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

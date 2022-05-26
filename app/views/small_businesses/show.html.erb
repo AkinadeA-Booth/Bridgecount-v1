@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Small business #<%= @the_small_business.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/small_businesses">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_small_business/<%= @the_small_business.id %>">
+          Delete small business
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Small business name
+      </dt>
+      <dd>
+        <%= @the_small_business.small_business_name %>
+      </dd>
+
+      <dt>
+        Small business description
+      </dt>
+      <dd>
+        <%= @the_small_business.small_business_description %>
+      </dd>
+
+      <dt>
+        Small business location
+      </dt>
+      <dd>
+        <%= @the_small_business.small_business_location %>
+      </dd>
+
+      <dt>
+        Small business phone number
+      </dt>
+      <dd>
+        <%= @the_small_business.small_business_phone_number %>
+      </dd>
+
+      <dt>
+        Small business photo
+      </dt>
+      <dd>
+        <%= @the_small_business.small_business_photo %>
+      </dd>
+
+      <dt>
+        Small business type
+      </dt>
+      <dd>
+        <%= @the_small_business.small_business_type %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_small_business.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_small_business.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit small business
+    </h2>
+
+    <form action="/modify_small_business/<%= @the_small_business.id %>"  method="post" >
+      <div>
+        <label for="small_business_name_box">
+          Small business name
+        </label>
+
+        <input type="text" id="small_business_name_box" name="query_small_business_name" value="<%= @the_small_business.small_business_name %>">
+      </div>
+
+      <div>
+        <label for="small_business_description_box">
+          Small business description
+        </label>
+
+        <textarea id="small_business_description_box" name="query_small_business_description"><%= @the_small_business.small_business_description %></textarea>
+      </div>
+
+      <div>
+        <label for="small_business_location_box">
+          Small business location
+        </label>
+
+        <input type="text" id="small_business_location_box" name="query_small_business_location" value="<%= @the_small_business.small_business_location %>">
+      </div>
+
+      <div>
+        <label for="small_business_phone_number_box">
+          Small business phone number
+        </label>
+
+        <input type="text" id="small_business_phone_number_box" name="query_small_business_phone_number" value="<%= @the_small_business.small_business_phone_number %>">
+      </div>
+
+      <div>
+        <label for="small_business_photo_box">
+          Small business photo
+        </label>
+
+        <input type="text" id="small_business_photo_box" name="query_small_business_photo" value="<%= @the_small_business.small_business_photo %>">
+      </div>
+
+      <div>
+        <label for="small_business_type_box">
+          Small business type
+        </label>
+
+        <input type="text" id="small_business_type_box" name="query_small_business_type" value="<%= @the_small_business.small_business_type %>">
+      </div>
+
+      <button>
+        Update small business
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

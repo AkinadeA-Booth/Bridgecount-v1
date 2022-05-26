@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Users leveraging accepted offer #<%= @the_users_leveraging_accepted_offer.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/users_leveraging_accepted_offers">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_users_leveraging_accepted_offer/<%= @the_users_leveraging_accepted_offer.id %>">
+          Delete users leveraging accepted offer
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_users_leveraging_accepted_offer.user_id %>
+      </dd>
+
+      <dt>
+        Accepted offer
+      </dt>
+      <dd>
+        <%= @the_users_leveraging_accepted_offer.accepted_offer_id %>
+      </dd>
+
+      <dt>
+        Number of times redeemed
+      </dt>
+      <dd>
+        <%= @the_users_leveraging_accepted_offer.number_of_times_redeemed %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_users_leveraging_accepted_offer.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_users_leveraging_accepted_offer.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit users leveraging accepted offer
+    </h2>
+
+    <form action="/modify_users_leveraging_accepted_offer/<%= @the_users_leveraging_accepted_offer.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_users_leveraging_accepted_offer.user_id %>">
+      </div>
+
+      <div>
+        <label for="accepted_offer_id_box">
+          Accepted offer
+        </label>
+
+        <input type="text" id="accepted_offer_id_box" name="query_accepted_offer_id" value="<%= @the_users_leveraging_accepted_offer.accepted_offer_id %>">
+      </div>
+
+      <div>
+        <label for="number_of_times_redeemed_box">
+          Number of times redeemed
+        </label>
+
+        <input type="text" id="number_of_times_redeemed_box" name="query_number_of_times_redeemed" value="<%= @the_users_leveraging_accepted_offer.number_of_times_redeemed %>">
+      </div>
+
+      <button>
+        Update users leveraging accepted offer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

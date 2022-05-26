@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Company #<%= @the_company.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/companies">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_company/<%= @the_company.id %>">
+          Delete company
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_company.name %>
+      </dd>
+
+      <dt>
+        Address
+      </dt>
+      <dd>
+        <%= @the_company.address %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_company.image %>
+      </dd>
+
+      <dt>
+        Company type
+      </dt>
+      <dd>
+        <%= @the_company.company_type %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_company.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_company.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit company
+    </h2>
+
+    <form action="/modify_company/<%= @the_company.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_company.name %>">
+      </div>
+
+      <div>
+        <label for="address_box">
+          Address
+        </label>
+
+        <input type="text" id="address_box" name="query_address" value="<%= @the_company.address %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_company.image %>">
+      </div>
+
+      <div>
+        <label for="company_type_box">
+          Company type
+        </label>
+
+        <input type="text" id="company_type_box" name="query_company_type" value="<%= @the_company.company_type %>">
+      </div>
+
+      <button>
+        Update company
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

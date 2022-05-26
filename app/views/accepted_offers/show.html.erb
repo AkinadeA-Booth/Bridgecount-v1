@@ -1,0 +1,133 @@
+<div>
+  <div>
+    <h1>
+      Accepted offer #<%= @the_accepted_offer.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/accepted_offers">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_accepted_offer/<%= @the_accepted_offer.id %>">
+          Delete accepted offer
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Offer
+      </dt>
+      <dd>
+        <%= @the_accepted_offer.offer_id %>
+      </dd>
+
+      <dt>
+        Company
+      </dt>
+      <dd>
+        <%= @the_accepted_offer.company_id %>
+      </dd>
+
+      <dt>
+        Offer start
+      </dt>
+      <dd>
+        <%= @the_accepted_offer.offer_start %>
+      </dd>
+
+      <dt>
+        Offer end
+      </dt>
+      <dd>
+        <%= @the_accepted_offer.offer_end %>
+      </dd>
+
+      <dt>
+        Number of redeems
+      </dt>
+      <dd>
+        <%= @the_accepted_offer.number_of_redeems %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_accepted_offer.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_accepted_offer.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit accepted offer
+    </h2>
+
+    <form action="/modify_accepted_offer/<%= @the_accepted_offer.id %>"  method="post" >
+      <div>
+        <label for="offer_id_box">
+          Offer
+        </label>
+
+        <input type="text" id="offer_id_box" name="query_offer_id" value="<%= @the_accepted_offer.offer_id %>">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_accepted_offer.company_id %>">
+      </div>
+
+      <div>
+        <label for="offer_start_box">
+          Offer start
+        </label>
+
+        <input type="datetime-local" id="offer_start_box" name="query_offer_start"
+         value="<%= @the_accepted_offer.offer_start %>">
+      </div>
+
+      <div>
+        <label for="offer_end_box">
+          Offer end
+        </label>
+
+        <input type="datetime-local" id="offer_end_box" name="query_offer_end"
+         value="<%= @the_accepted_offer.offer_end %>">
+      </div>
+
+      <div>
+        <label for="number_of_redeems_box">
+          Number of redeems
+        </label>
+
+        <input type="text" id="number_of_redeems_box" name="query_number_of_redeems" value="<%= @the_accepted_offer.number_of_redeems %>">
+      </div>
+
+      <button>
+        Update accepted offer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
