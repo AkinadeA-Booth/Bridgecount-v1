@@ -1,0 +1,11 @@
+id,created_at,updated_at,first_name,last_name,email,password,company_id,company_admin_true_or_false
+1,,,Vikram,Venkat,vvenkat@chicagobooth.edu,Password123,173-01,TRUE
+2,,,Akinade,Aderele,akinaderele@chicagobooth.edu,Akinade@2022,174-01,TRUE
+3,,,Jessie,Wang,jessiew@chicagobooth.edu,Mx4!#rnP7j,174-02,TRUE
+4,,,Kofi,Amoako-Gyan,vvenkat@uchicago.edu,Welcome2Kofi!,173-01,FALSE
+5,,,Aditya,Joshi,vikram.venkat@gmail.com,i<3Gunda,173-01,FALSE
+6,,,Medha,Gupta,vikram_venkat@gmail.com,MedhaGupta0522,173-01,FALSE
+7,,,Randell,Strowbridge,me12b155@smail.iitm.ac.in,BigCanadianMoose1991,174-01,FALSE
+8,,,Peter,McNally,petermcnally77@gmail.com,petermcnally77,174-01,FALSE
+9,,,Anthony,Arias,anthony_paul_arias@hotmail.com,josbcs66@HNR,174-02,FALSE
+,,,Kathy,Kang,vvenkat@chicagobooth.edu,Follies4eva!,174-02,FALSE

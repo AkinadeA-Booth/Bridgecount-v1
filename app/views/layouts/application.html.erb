@@ -14,6 +14,19 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
   </head>
+  <nav>
+    <ul>
+      <li>
+      <a href="/users_leveraging_accepted_offers/:path_id">User Profile</a>
+      </li>
+      <li>
+      <a href="/offers">Offers</a>
+      </li>
+      <li>
+      <a href="/accepted_offers/:path_id">Accepted Offers</a>
+      </li>
+    </ul>
+  </nav>
 
   <body>
     <%= yield %>
