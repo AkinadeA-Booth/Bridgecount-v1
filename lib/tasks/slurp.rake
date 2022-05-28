@@ -31,7 +31,7 @@ namespace :slurp do
       c.save
 
       puts "#{c.address}, #{c.name} saved"
-    end
+  end
    ####################################################################################################
     Offer.destroy_all
 
@@ -84,7 +84,7 @@ namespace :slurp do
       u.id = row["id"]
       u.company_admin_true_or_false = row["company_admin_true_or_false"]
       u.email = row["email"]
-      u.small_business_name = row["password"]
+      u.password_digest = row["password"]
       u.photo = row["photo"]
       u.created_at = row["created_at"]
       u.updated_at = row["updated_at"]
@@ -92,11 +92,11 @@ namespace :slurp do
 
       u.save
 
-      puts "#{u.offer_description}, #{u.email} saved"
+      puts "#{u.company_admin_true_or_false}, #{u.email} saved"
     end
 
     ####################################################################################################
-    Small_business.destroy_all
+    SmallBusiness.destroy_all
 
     csv_text_4 = File.read(Rails.root.join("lib", "csvs", "small_businesses.csv"))
     csv_4 = CSV.parse(csv_text_4, :headers => true, :encoding => "ISO-8859-1")
@@ -116,7 +116,7 @@ namespace :slurp do
       #  created_at                  :datetime         not null
       #  updated_at                  :datetime         not null               :integer
 
-      b = Small_business.new
+      b = SmallBusiness.new
       b.id = row["id"]
       b.small_business_description = row["small_business_description"]
       b.small_business_location = row["small_business_location"]
@@ -125,7 +125,7 @@ namespace :slurp do
       b.small_business_photo = row["small_business_photo"]
       b.small_business_type = row["small_business_type"]
       b.updated_at = row["updated_at"]
-      b.company_id = row["company_id"]
+      b.created_at = row["created_at"]
 
       b.save
 
