@@ -1,6 +1,6 @@
 namespace :slurp do
   desc "TODO"
-  task transactions: :environment do
+  task companies: :environment do
     require "csv"
 
     Company.destroy_all
@@ -31,8 +31,12 @@ namespace :slurp do
       c.save
 
       puts "#{c.address}, #{c.name} saved"
+    end
   end
-   ####################################################################################################
+  ####################################################################################################
+  desc "TODO1"
+  task offers: :environment do
+    require "csv"
     Offer.destroy_all
 
     csv_text_2 = File.read(Rails.root.join("lib", "csvs", "offers.csv"))
@@ -62,7 +66,11 @@ namespace :slurp do
 
       puts "#{o.offer_description}, #{o.offer_name} saved"
     end
-      #################################################################################################### 
+  end
+  ####################################################################################################
+  desc "TODO2"
+  task users: :environment do
+    require "csv"
     User.destroy_all
 
     csv_text_3 = File.read(Rails.root.join("lib", "csvs", "users.csv"))
@@ -71,14 +79,14 @@ namespace :slurp do
       puts row.to_hash
       puts csv_text_3
 
-    #  id                          :integer          not null, primary key
-    #  company_admin_true_or_false :boolean
-    #  email                       :string
-    #  password_digest             :string
-    #  photo                       :string
-    #  created_at                  :datetime         not null
-    #  updated_at                  :datetime         not null
-    #  company_id                  :integer
+      #  id                          :integer          not null, primary key
+      #  company_admin_true_or_false :boolean
+      #  email                       :string
+      #  password_digest             :string
+      #  photo                       :string
+      #  created_at                  :datetime         not null
+      #  updated_at                  :datetime         not null
+      #  company_id                  :integer
 
       u = User.new
       u.id = row["id"]
@@ -89,13 +97,19 @@ namespace :slurp do
       u.created_at = row["created_at"]
       u.updated_at = row["updated_at"]
       u.company_id = row["company_id"]
+      u.first_name = row["first_name "]
+      u.last_name = row["last_name "]
 
       u.save
 
       puts "#{u.company_admin_true_or_false}, #{u.email} saved"
     end
+  end
 
-    ####################################################################################################
+  ####################################################################################################
+  desc "TODO3"
+  task smallbusinesses: :environment do
+    require "csv"
     SmallBusiness.destroy_all
 
     csv_text_4 = File.read(Rails.root.join("lib", "csvs", "small_businesses.csv"))
@@ -104,7 +118,7 @@ namespace :slurp do
       puts row.to_hash
       puts csv_text_4
 
-  # id,created_at,updated_at,small_business_name,small_business_description,small_business_location,small_business_phone_number,small_business_photo,small_business_type
+      # id,created_at,updated_at,small_business_name,small_business_description,small_business_location,small_business_phone_number,small_business_photo,small_business_type
 
       #  id                          :integer          not null, primary key
       #  small_business_description  :text

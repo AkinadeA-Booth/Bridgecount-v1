@@ -5,6 +5,8 @@
 #  id                          :integer          not null, primary key
 #  company_admin_true_or_false :boolean
 #  email                       :string
+#  first_name                  :string
+#  last_name                   :string
 #  password_digest             :string
 #  photo                       :string
 #  created_at                  :datetime         not null
