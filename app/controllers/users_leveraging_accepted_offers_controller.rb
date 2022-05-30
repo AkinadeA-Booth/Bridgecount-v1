@@ -25,7 +25,7 @@ class UsersLeveragingAcceptedOffersController < ApplicationController
 
     if the_users_leveraging_accepted_offer.valid?
       the_users_leveraging_accepted_offer.save
-      redirect_to("/users_leveraging_accepted_offers", { :notice => "Users leveraging accepted offer created successfully." })
+      redirect_to("/users_leveraging_accepted_offers", { :notice => "Offer added successfully." })
     else
       redirect_to("/users_leveraging_accepted_offers", { :alert => the_users_leveraging_accepted_offer.errors.full_messages.to_sentence })
     end

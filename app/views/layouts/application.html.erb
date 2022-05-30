@@ -16,17 +16,33 @@
   </head>
   <nav>
     <ul>
-      <li>
-      <a href="/users_leveraging_accepted_offers/:path_id">User Profile</a>
-      </li>
-      <li>
-      <a href="/offers">Offers</a>
-      </li>
-      <li>
-      <a href="/accepted_offers/:path_id">Accepted Offers</a>
-      </li>
+      <% if @current_user == nil %>
+        <li>
+          <a href="/user_sign_up">Sign up</a>
+        </li>
+        <li>
+          <a href="/user_sign_in">Sign in</a>
+        </li>
+      <% else %>
+        <li>
+          <a href="/accepted_offers/:path_id"><%= @current_user.first_name %>'s offers</a>
+        </li>
+        <li>
+          <a href="/user_sign_out">Sign out</a>
+        </li>
+        <li>
+
+          <a href="/offers">Offers</a>
+        </li>
+
+      <% end %>
+
     </ul>
   </nav>
+
+  <p style="color: green"><%= notice %></p>
+
+  <p style="color: red"><%= alert %></p>
 
   <body>
     <%= yield %>
