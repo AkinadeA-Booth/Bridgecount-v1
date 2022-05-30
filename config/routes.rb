@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get("/", { :controller => "offers", :action => "index"})
 
 
   # Routes for the Small business resource:

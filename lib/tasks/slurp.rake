@@ -30,11 +30,12 @@ namespace :slurp do
 
       c.save
 
-      puts "#{c.address}, #{c.name} saved"
+      puts "#{c.errors.full_messages}, #{c.name} saved"
     end
+
   end
   ####################################################################################################
-  desc "TODO1"
+  desc "TODO"
   task offers: :environment do
     require "csv"
     Offer.destroy_all
@@ -64,11 +65,11 @@ namespace :slurp do
 
       o.save
 
-      puts "#{o.offer_description}, #{o.offer_name} saved"
+      puts "#{o.errors.full_messages}, #{o.offer_name} saved"
     end
   end
   ####################################################################################################
-  desc "TODO2"
+  desc "TODO"
   task users: :environment do
     require "csv"
     User.destroy_all
@@ -102,14 +103,15 @@ namespace :slurp do
 
       u.save
 
-      puts "#{u.company_admin_true_or_false}, #{u.email} saved"
+      puts "#{u.errors.full_messages}, #{u.email} saved"
     end
   end
 
   ####################################################################################################
-  desc "TODO3"
+  desc "TODO"
   task smallbusinesses: :environment do
     require "csv"
+
     SmallBusiness.destroy_all
 
     csv_text_4 = File.read(Rails.root.join("lib", "csvs", "small_businesses.csv"))
@@ -143,7 +145,7 @@ namespace :slurp do
 
       b.save
 
-      puts "#{b.small_business_name}, #{b.small_business_phone_number} saved"
+      puts "#{b.errors.full_messages}, #{b.small_business_phone_number} saved"
     end
   end
 end
