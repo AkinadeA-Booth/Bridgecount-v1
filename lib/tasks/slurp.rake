@@ -95,7 +95,7 @@ namespace :slurp do
       u.id = row["id"]
       u.company_admin_true_or_false = row["company_admin_true_or_false"]
       u.email = row["email"]
-      u.password_digest = row["password"]
+      u.password = row["password"]
       u.photo = row["photo"]
       u.created_at = row["created_at"]
       u.updated_at = row["updated_at"]
