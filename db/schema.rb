@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_29_141604) do
+ActiveRecord::Schema.define(version: 2022_05_31_141716) do
 
   create_table "accepted_offers", force: :cascade do |t|
     t.integer "offer_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_05_29_141604) do
     t.string "small_business_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_05_29_141604) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+    t.boolean "smallbiz"
   end
 
   create_table "users_leveraging_accepted_offers", force: :cascade do |t|

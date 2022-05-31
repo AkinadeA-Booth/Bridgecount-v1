@@ -9,6 +9,7 @@
 #  last_name                   :string
 #  password_digest             :string
 #  photo                       :string
+#  smallbiz                    :boolean
 #  created_at                  :datetime         not null
 #  updated_at                  :datetime         not null
 #  company_id                  :integer

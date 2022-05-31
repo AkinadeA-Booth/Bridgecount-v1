@@ -83,12 +83,14 @@ namespace :slurp do
       #  id                          :integer          not null, primary key
       #  company_admin_true_or_false :boolean
       #  email                       :string
+      #  first_name                  :string
+      #  last_name                   :string
       #  password_digest             :string
       #  photo                       :string
+      #  smallbiz                    :boolean
       #  created_at                  :datetime         not null
       #  updated_at                  :datetime         not null
       #  company_id                  :integer
-
       u = User.new
       u.id = row["id"]
       u.company_admin_true_or_false = row["company_admin_true_or_false"]
@@ -100,6 +102,7 @@ namespace :slurp do
       u.company_id = row["company_id"]
       u.first_name = row["first_name "]
       u.last_name = row["last_name "]
+      u.smallbiz = row["small_business_owner"]
 
       u.save
 
@@ -122,15 +125,16 @@ namespace :slurp do
 
       # id,created_at,updated_at,small_business_name,small_business_description,small_business_location,small_business_phone_number,small_business_photo,small_business_type
 
-      #  id                          :integer          not null, primary key
-      #  small_business_description  :text
-      #  small_business_location     :string
-      #  small_business_name         :string
-      #  small_business_phone_number :integer
-      #  small_business_photo        :string
-      #  small_business_type         :string
-      #  created_at                  :datetime         not null
-      #  updated_at                  :datetime         not null               :integer
+    #  id                          :integer          not null, primary key
+    #  small_business_description  :text
+    #  small_business_location     :string
+    #  small_business_name         :string
+    #  small_business_phone_number :integer
+    #  small_business_photo        :string
+    #  small_business_type         :string
+    #  created_at                  :datetime         not null
+    #  updated_at                  :datetime         not null
+    #  user_id                     :integer
 
       b = SmallBusiness.new
       b.id = row["id"]
@@ -142,6 +146,7 @@ namespace :slurp do
       b.small_business_type = row["small_business_type"]
       b.updated_at = row["updated_at"]
       b.created_at = row["created_at"]
+      b.user_id = row["user_id"]
 
       b.save
 
