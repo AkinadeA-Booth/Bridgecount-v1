@@ -15,12 +15,20 @@
     </h2>
 
     <form action="/insert_accepted_offer" method="post">
+
       <div>
-        <label for="offer_id_box">
+        <select name="query_company_id" id="company_id_box">
+
+          <%= Offer.all.order(:name).each do |an_offer| %>
+
+            <option type="text" id="offer_id_box" name="query_offer_id">
+              <%= an_offer.offer_name%>
+            </option>
+          <% end %>
+        </select>
+               <label for="offer_id_box">
           Offer
         </label>
-
-        <input type="text" id="offer_id_box" name="query_offer_id">
       </div>
 
       <div>
@@ -104,44 +112,44 @@
       </tr>
 
       <% @list_of_accepted_offers.each do |an_accepted_offer| %>
-      <tr>
-        <td>
-          <%= an_accepted_offer.id %>
-        </td>
+        <tr>
+          <td>
+            <%= an_accepted_offer.id %>
+          </td>
 
-        <td>
-          <%= an_accepted_offer.offer_id %>
-        </td>
+          <td>
+            <%= an_accepted_offer.offer_id %>
+          </td>
 
-        <td>
-          <%= an_accepted_offer.company_id %>
-        </td>
+          <td>
+            <%= an_accepted_offer.company_id %>
+          </td>
 
-        <td>
-          <%= an_accepted_offer.offer_start %>
-        </td>
+          <td>
+            <%= an_accepted_offer.offer_start %>
+          </td>
 
-        <td>
-          <%= an_accepted_offer.offer_end %>
-        </td>
+          <td>
+            <%= an_accepted_offer.offer_end %>
+          </td>
 
-        <td>
-          <%= an_accepted_offer.number_of_redeems %>
-        </td>
+          <td>
+            <%= an_accepted_offer.number_of_redeems %>
+          </td>
 
-        <td>
-          <%= time_ago_in_words(an_accepted_offer.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(an_accepted_offer.updated_at) %> ago
-        </td>
+          <td>
+            <%= time_ago_in_words(an_accepted_offer.created_at) %> ago
+          </td>
+          <td>
+            <%= time_ago_in_words(an_accepted_offer.updated_at) %> ago
+          </td>
 
-        <td>
-          <a href="/accepted_offers/<%= an_accepted_offer.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
+          <td>
+            <a href="/accepted_offers/<%= an_accepted_offer.id %>">
+              Show details
+            </a>
+          </td>
+        </tr>
       <% end %>
     </table>
   </div>
