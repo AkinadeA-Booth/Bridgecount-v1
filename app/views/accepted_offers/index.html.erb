@@ -31,13 +31,19 @@
         </label>
       </div>
 
-      <div>
-        <label for="company_id_box">
-          Company
-        </label>
+  <div>
+    <select name="query_company_id" id="company_id_box">
 
-        <input type="text" id="company_id_box" name="query_company_id">
-      </div>
+    <%= Company.all.order(:name).each do |a_company| %>
+        
+      <option type="text" id="company_id_box" name="query_company_id"> 
+          <%= a_company.name%>
+      </option>
+      <% end %>
+    </select>
+
+      <label for="company_id_box">Which one of our member companies are you part of?</label>
+  </div>
 
       <div>
         <label for="offer_start_box">

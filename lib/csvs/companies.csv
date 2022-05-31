@@ -1,11 +1,11 @@
 id,created_at,updated_at,name,address,image,company_type
-1,,,Jackson and company,10 stricker lane,,Consulting
-2,,,Meryyl Strip bank,57 hat lane,,Bank
-3,,,Bank of America,78 pass drive,,Bank
-4,,,Morgan Standley,67 jogs way,,Bank
-5,,,Chasing Bank,78 cras junction,,Bank
-6,,,Bain of my existence and company,56 tups way,,Consulting
-7,,,Wisconson consulting group,43 stick way,,Counsulting
-8,,,Floormart,87 gat port,,CPG
-9,,,Mediocrezon,78 tuy boulevard,,Tech
-10,,,Oogle,879 way out way,,Tech
+1,,,Jackson and company,10 stricker lane,https://robohash.org/companies,Consulting
+2,,,Meryyl Strip bank,57 hat lane,https://robohash.org/companies,Bank
+3,,,Bank of America,78 pass drive,https://robohash.org/companies,Bank
+4,,,Morgan Standley,67 jogs way,https://robohash.org/companies,Bank
+5,,,Chasing Bank,78 cras junction,https://robohash.org/companies,Bank
+6,,,Bain of my existence and company,56 tups way,https://robohash.org/companies,Consulting
+7,,,Wisconson consulting group,43 stick way,https://robohash.org/companies,Counsulting
+8,,,Floormart,87 gat port,https://robohash.org/companies,CPG
+9,,,Mediocrezon,78 tuy boulevard,https://robohash.org/companies,Tech
+10,,,Oogle,879 way out way,https://robohash.org/companies,Tech

@@ -23,27 +23,36 @@
         <li>
           <a href="/user_sign_in">Sign in</a>
         </li>
-      <% else %>
+
         <li>
-          <a href="/accepted_offers/:path_id"><%= @current_user.first_name%>'s offers</a>
+          <a href="/companies">Companies</a>
         </li>
         <li>
-          <a href="/user_sign_out">Sign out</a>
+          <a href="/users_leveraging_accepted_offers">Offers being used</a>
         </li>
         <li>
-          <a href="/accepted_offers">Your offers</a>
+          <a href="/offers">All offers being used</a>
         </li>
+      </li>
 
-      <% end %>
+    <% else %>
+      <li>
+        <a href="/accepted_offers/:path_id"><%= @current_user.first_name%>'s offers</a>
+      </li>
+      <li>
+        <a href="/user_sign_out">Sign out</a>
+      </li>
 
-    </ul>
-  </nav>
+    <% end %>
 
-  <p style="color: green"><%= notice %></p>
+  </ul>
+</nav>
 
-  <p style="color: red"><%= alert %></p>
+<p style="color: green"><%= notice %></p>
 
-  <body>
-    <%= yield %>
-  </body>
+<p style="color: red"><%= alert %></p>
+
+<body>
+  <%= yield %>
+</body>
 </html>
