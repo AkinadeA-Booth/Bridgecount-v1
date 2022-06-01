@@ -21,7 +21,7 @@ class UsersLeveragingAcceptedOffersController < ApplicationController
     the_users_leveraging_accepted_offer = UsersLeveragingAcceptedOffer.new
     the_users_leveraging_accepted_offer.user_id = params.fetch("query_user_id")
     the_users_leveraging_accepted_offer.accepted_offer_id = params.fetch("query_accepted_offer_id")
-    the_users_leveraging_accepted_offer.number_of_times_redeemed = params.fetch("query_number_of_times_redeemed")
+    #the_users_leveraging_accepted_offer.number_of_times_redeemed = params.fetch("query_number_of_times_redeemed")
 
     if the_users_leveraging_accepted_offer.valid?
       the_users_leveraging_accepted_offer.save

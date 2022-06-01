@@ -11,7 +11,7 @@
 <div>
   <div>
     <h2>
-      Add a new users leveraging accepted offer
+      All your accepted offers
     </h2>
 
     <form action="/insert_users_leveraging_accepted_offer" method="post">
@@ -60,7 +60,7 @@
         </th>
 
         <th>
-          Accepted offer
+          Your offer
         </th>
 
         <th>
@@ -90,7 +90,7 @@
         </td>
 
         <td>
-          <%= a_users_leveraging_accepted_offer.accepted_offer_id %>
+          <%= a_users_leveraging_accepted_offer.accepted_offer.offer.offer_name %>
         </td>
 
         <td>

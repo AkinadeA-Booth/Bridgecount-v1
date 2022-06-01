@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Users leveraging accepted offer #<%= @the_users_leveraging_accepted_offer.id %> details
+      All your offers #<%= @the_users_leveraging_accepted_offer.id %> details
     </h1>
 
     <div>
@@ -30,15 +30,9 @@
         Accepted offer
       </dt>
       <dd>
-        <%= @the_users_leveraging_accepted_offer.accepted_offer_id %>
+        <%= @the_users_leveraging_accepted_offer.accepted_offer.name %>
       </dd>
 
-      <dt>
-        Number of times redeemed
-      </dt>
-      <dd>
-        <%= @the_users_leveraging_accepted_offer.number_of_times_redeemed %>
-      </dd>
 
       <dt>
         Created at
