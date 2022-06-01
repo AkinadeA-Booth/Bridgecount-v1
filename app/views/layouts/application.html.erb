@@ -30,7 +30,7 @@
         <li>
           <a href="/users_leveraging_accepted_offers">Offers being used</a>
         </li>
-      <% elsif @current_user.company_admin_true_or_false == True %>
+      <% elsif @current_user != nil && @current_user.company_admin_true_or_false == true %>
         <li>
           <a href="/offers">All offers available</a>
         </li>

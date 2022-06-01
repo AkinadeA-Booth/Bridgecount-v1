@@ -3,7 +3,62 @@
     <h1>
       Accepted offer #<%= @the_accepted_offer.id %> details
     </h1>
+#####
+ <form action="/insert_users_leveraging_accepted_offer" method="post">
 
+        <div>
+          <label for="the_accepted_offer_id_box">
+            Offer
+          </label>
+          <input type="hidden" id="the_accepted_offer_id_box" name="query_offer_id" value="<%= @the_accepted_offer.id %>">
+        </div>
+
+        <div>
+          <select name="query_company_id" id="company_id_box">
+
+            <%= Company.all.order(:name).each do |a_company| %>
+
+              <option type="text" id="company_id_box" name="query_company_id" value=<%= a_company.id %>>
+                <%= a_company.name%>
+              </option>
+            <% end %>
+          </select>
+
+          <label for="company_id_box">Which one of our member companies are you part of?</label>
+        </div>
+
+        <div>
+          <label for="offer_start_box">
+            Offer start
+          </label>
+
+          <input type="datetime-local" id="offer_start_box" name="query_offer_start">
+        </div>
+
+        <div>
+          <label for="offer_end_box">
+            Offer end
+          </label>
+
+          <input type="datetime-local" id="offer_end_box" name="query_offer_end">
+        </div>
+
+        <div>
+          <label for="number_of_redeems_box">
+            Number of redeems
+          </label>
+
+          <input type="hidden" id="number_of_redeems_box" name="query_number_of_redeems">
+        </div>
+
+        <button>
+          Select Offer
+        </button>
+      </form>
+
+
+
+#####
     <div>
       <div>
         <a href="/accepted_offers">

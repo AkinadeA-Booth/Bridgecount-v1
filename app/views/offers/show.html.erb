@@ -5,117 +5,167 @@
     </h1>
 
     <td>
-      <a href="/insert_users_leveraging_accepted_offer" method="post">
-        Select Offer
-      </a>
-      </td>
 
-      <div>
+      <form action="/insert_accepted_offer" method="post">
+
         <div>
-          <a href="/offers">
-            Go back
-          </a>
+          <label for="offer_id_box">
+            Offer
+          </label>
+          <input type="hidden" id="offer_id_box" name="query_offer_id" value="<%= @the_offer.id %>">
         </div>
 
         <div>
-          <a href="/delete_offer/<%= @the_offer.id %>">
-            Delete offer
-          </a>
+          <select name="query_company_id" id="company_id_box">
+
+            <%= Company.all.order(:name).each do |a_company| %>
+
+              <option type="text" id="company_id_box" name="query_company_id" value=<%= a_company.id %>>
+                <%= a_company.name%>
+              </option>
+            <% end %>
+          </select>
+
+          <label for="company_id_box">Which one of our member companies are you part of?</label>
         </div>
-      </div>
 
-      <dl>
-        <dt>
-          Offer name
-        </dt>
-        <dd>
-          <%= @the_offer.offer_name %>
-        </dd>
-
-        <dt>
-          Offer description
-        </dt>
-        <dd>
-          <%= @the_offer.offer_description %>
-        </dd>
-
-        <dt>
-          Small business
-        </dt>
-        <dd>
-          <%= @the_offer.small_business_id %>
-        </dd>
-
-        <dt>
-          Offer photo
-        </dt>
-        <dd>
-          <%= @the_offer.offer_photo %>
-        </dd>
-
-        <dt>
-          Created at
-        </dt>
-        <dd>
-          <%= time_ago_in_words(@the_offer.created_at) %> ago
-        </dd>
-
-        <dt>
-          Updated at
-        </dt>
-        <dd>
-          <%= time_ago_in_words(@the_offer.updated_at) %> ago
-        </dd>
-      </dl>
-    </div>
-  </div>
-
-  <hr>
-
-  <div>
-    <div>
-      <h2>
-        Edit offer
-      </h2>
-
-      <form action="/modify_offer/<%= @the_offer.id %>"  method="post" >
         <div>
-          <label for="offer_name_box">
-            Offer name
+          <label for="offer_start_box">
+            Offer start
           </label>
 
-          <input type="text" id="offer_name_box" name="query_offer_name" value="<%= @the_offer.offer_name %>">
+          <input type="datetime-local" id="offer_start_box" name="query_offer_start">
         </div>
 
         <div>
-          <label for="offer_description_box">
-            Offer description
+          <label for="offer_end_box">
+            Offer end
           </label>
 
-          <textarea id="offer_description_box" name="query_offer_description"><%= @the_offer.offer_description %></textarea>
+          <input type="datetime-local" id="offer_end_box" name="query_offer_end">
         </div>
 
         <div>
-          <label for="small_business_id_box">
-            Small business
+          <label for="number_of_redeems_box">
+            Number of redeems
           </label>
 
-          <input type="text" id="small_business_id_box" name="query_small_business_id" value="<%= @the_offer.small_business_id %>">
-        </div>
-
-        <div>
-          <label for="offer_photo_box">
-            Offer photo
-          </label>
-
-          <input type="text" id="offer_photo_box" name="query_offer_photo" value="<%= @the_offer.offer_photo %>">
+          <input type="hidden" id="number_of_redeems_box" name="query_number_of_redeems">
         </div>
 
         <button>
-          Update offer
+          Accept offer
         </button>
       </form>
-    </div>
-  </div>
+      ####
+    </td>
 
-  <hr>
+    <div>
+      <div>
+        <a href="/offers">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_offer/<%= @the_offer.id %>">
+          Delete offer
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Offer name
+      </dt>
+      <dd>
+        <%= @the_offer.offer_name %>
+      </dd>
+
+      <dt>
+        Offer description
+      </dt>
+      <dd>
+        <%= @the_offer.offer_description %>
+      </dd>
+
+      <dt>
+        Small business
+      </dt>
+      <dd>
+        <%= @the_offer.small_business_id %>
+      </dd>
+
+      <dt>
+        Offer photo
+      </dt>
+      <dd>
+        <%= @the_offer.offer_photo %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_offer.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_offer.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Edit offer
+    </h2>
+
+    <form action="/modify_offer/<%= @the_offer.id %>"  method="post" >
+      <div>
+        <label for="offer_name_box">
+          Offer name
+        </label>
+
+        <input type="text" id="offer_name_box" name="query_offer_name" value="<%= @the_offer.offer_name %>">
+      </div>
+
+      <div>
+        <label for="offer_description_box">
+          Offer description
+        </label>
+
+        <textarea id="offer_description_box" name="query_offer_description"><%= @the_offer.offer_description %></textarea>
+      </div>
+
+      <div>
+        <label for="small_business_id_box">
+          Small business
+        </label>
+
+        <input type="text" id="small_business_id_box" name="query_small_business_id" value="<%= @the_offer.small_business_id %>">
+      </div>
+
+      <div>
+        <label for="offer_photo_box">
+          Offer photo
+        </label>
+
+        <input type="text" id="offer_photo_box" name="query_offer_photo" value="<%= @the_offer.offer_photo %>">
+      </div>
+
+      <button>
+        Update offer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
