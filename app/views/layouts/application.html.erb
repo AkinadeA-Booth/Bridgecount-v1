@@ -30,29 +30,32 @@
         <li>
           <a href="/users_leveraging_accepted_offers">Offers being used</a>
         </li>
+      <% elsif @current_user.company_admin_true_or_false == True %>
         <li>
-          <a href="/offers">All offers being used</a>
+          <a href="/offers">All offers available</a>
         </li>
-      </li>
+        <li>
+          <a href="/accepted_offers"><%= @current_user.first_name%>'s offers</a>
+        </li>
 
-    <% else %>
-      <li>
-        <a href="/accepted_offers/:path_id"><%= @current_user.first_name%>'s offers</a>
-      </li>
-      <li>
-        <a href="/user_sign_out">Sign out</a>
-      </li>
+      <% else %>
+        <li>
+          <a href="/users_leveraging_accepted_offers"><%= @current_user.first_name%>'s offers</a>
+        </li>
+        <li>
+          <a href="/user_sign_out">Sign out</a>
+        </li>
 
-    <% end %>
+      <% end %>
 
-  </ul>
-</nav>
+    </ul>
+  </nav>
 
-<p style="color: green"><%= notice %></p>
+  <p style="color: green"><%= notice %></p>
 
-<p style="color: red"><%= alert %></p>
+  <p style="color: red"><%= alert %></p>
 
-<body>
-  <%= yield %>
-</body>
+  <body>
+    <%= yield %>
+  </body>
 </html>

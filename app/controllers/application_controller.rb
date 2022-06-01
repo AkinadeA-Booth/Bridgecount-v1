@@ -9,6 +9,13 @@ class ApplicationController < ActionController::Base
     
     @current_user = User.where({ :id => the_id }).first
   end
+
+  def load_user_company
+    the_company_id = session[:company_id]
+
+    @current_user_company = User.where({ :id => the_company_id }).first
+
+  end
   
   def force_user_sign_in
     if @current_user == nil
