@@ -46,9 +46,7 @@
   <div>
     <table border="1" class="table table-hover">
       <tr>
-        <th>
-          ID
-        </th>
+
 
         <th>
           User
@@ -59,45 +57,23 @@
         </th>
 
         <th>
-          Number of times redeemed
+          Details
         </th>
 
-        <th>
-          Created at
-        </th>
 
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
 
       <% @list_of_users_leveraging_accepted_offers.each do |a_users_leveraging_accepted_offer| %>
         <tr>
-          <td>
-            <%= a_users_leveraging_accepted_offer.id %>
-          </td>
 
           <td>
-            <%= a_users_leveraging_accepted_offer.user_id %>
+            <%= a_users_leveraging_accepted_offer.user.first_name %>, <%= a_users_leveraging_accepted_offer.user.last_name %>
           </td>
 
           <td>
             <%= a_users_leveraging_accepted_offer.accepted_offer.offer.offer_name %>
           </td>
 
-          <td>
-            <%= a_users_leveraging_accepted_offer.number_of_times_redeemed %>
-          </td>
-
-          <td>
-            <%= time_ago_in_words(a_users_leveraging_accepted_offer.created_at) %> ago
-          </td>
-          <td>
-            <%= time_ago_in_words(a_users_leveraging_accepted_offer.updated_at) %> ago
-          </td>
 
           <td>
             <a href="/users_leveraging_accepted_offers/<%= a_users_leveraging_accepted_offer.id %>">

@@ -75,9 +75,6 @@
   <div>
     <table border="1" class="table table-hover">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           Small business name
@@ -104,23 +101,16 @@
         </th>
 
         <th>
-          Created at
+          Joined
         </th>
 
         <th>
-          Updated at
-        </th>
-
-        <th>
+          Learn about our small business partners
         </th>
       </tr>
 
       <% @list_of_small_businesses.each do |a_small_business| %>
       <tr>
-        <td>
-          <%= a_small_business.id %>
-        </td>
-
         <td>
           <%= a_small_business.small_business_name %>
         </td>
@@ -138,7 +128,7 @@
         </td>
 
         <td>
-          <%= a_small_business.small_business_photo %>
+          <img src="<%= a_small_business.small_business_photo%>" class="img-thumbnail" alt="img-thumbnail"</img>
         </td>
 
         <td>
@@ -148,9 +138,7 @@
         <td>
           <%= time_ago_in_words(a_small_business.created_at) %> ago
         </td>
-        <td>
-          <%= time_ago_in_words(a_small_business.updated_at) %> ago
-        </td>
+
 
         <td>
           <a href="/small_businesses/<%= a_small_business.id %>">

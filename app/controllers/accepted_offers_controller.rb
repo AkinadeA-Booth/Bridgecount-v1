@@ -2,6 +2,7 @@ class AcceptedOffersController < ApplicationController
   def index
     matching_accepted_offers = AcceptedOffer.all
 
+
     @list_of_accepted_offers = matching_accepted_offers.order({ :created_at => :desc })
 
     render({ :template => "accepted_offers/index.html.erb" })
@@ -23,7 +24,6 @@ class AcceptedOffersController < ApplicationController
     the_accepted_offer.company_id = params.fetch("query_company_id")
     the_accepted_offer.offer_start = params.fetch("query_offer_start")
     the_accepted_offer.offer_end = params.fetch("query_offer_end")
-    the_accepted_offer.number_of_redeems = params.fetch("query_number_of_redeems")
 
     if the_accepted_offer.valid?
       the_accepted_offer.save

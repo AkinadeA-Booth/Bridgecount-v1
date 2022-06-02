@@ -1,6 +1,6 @@
 <div>
   <div>
-    <h1 class="display-1">
+    <h1 class="display-2">
       Your Offers
     </h1>
   </div>
@@ -10,7 +10,7 @@
 
 <div>
   <div>
-    <h2 class="display-2">
+    <h2 class="display-6">
       Add a new offer
     </h2>
 
@@ -59,9 +59,7 @@
   <div>
     <table border="1" class="table table-hover">
       <tr>
-        <th>
-          ID
-        </th>
+
 
         <th>
           Offer name
@@ -80,23 +78,12 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
+          View the offer details!
         </th>
       </tr>
 
       <% @list_of_offers.each do |an_offer| %>
       <tr>
-        <td>
-          <%= an_offer.id %>
-        </td>
-
         <td>
           <%= an_offer.offer_name %>
         </td>
@@ -110,18 +97,12 @@
         </td>
 
         <td>
-          <img src="<%= an_offer.offer_photo %>">
+          <img src="<%= an_offer.offer_photo %>" class="img-fluid" alt="img-fluid">
         </td>
     
-        <td>
-          <%= time_ago_in_words(an_offer.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(an_offer.updated_at) %> ago
-        </td>
 
         <td>
-          <a href="/offers/<%= an_offer.id %>">
+          <a href="/offers/<%= an_offer.id %>" class="link-primary">
             Show details
           </a>
         </td>
