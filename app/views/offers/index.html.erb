@@ -1,6 +1,6 @@
 <div>
   <div>
-    <h1>
+    <h1 class="display-1">
       Your Offers
     </h1>
   </div>
@@ -10,44 +10,44 @@
 
 <div>
   <div>
-    <h2>
+    <h2 class="display-2">
       Add a new offer
     </h2>
 
     <form action="/insert_offer" method="post">
-      <div>
+      <div class="form-floating mb-3">
         <label for="offer_name_box">
           Offer name
         </label>
 
-        <input type="text" id="offer_name_box" name="query_offer_name">
+        <input type="text" id="offer_name_box" name="query_offer_name" class="form-control">
       </div>
 
-      <div>
+      <div class="form-floating">
         <label for="offer_description_box">
           Offer description
         </label>
 
-        <textarea id="offer_description_box" name="query_offer_description" rows="3"></textarea>
+        <textarea id="offer_description_box" name="query_offer_description" rows="3" class="form-control"></textarea>
       </div>
 
-      <div>
+      <div class="form-floating mb-3">
         <label for="small_business_id_box">
           Small business
         </label>
 
-        <input type="text" id="small_business_id_box" name="query_small_business_id">
+        <input type="text" id="small_business_id_box" name="query_small_business_id" class="form-control">
       </div>
 
-      <div>
+      <div class="form-floating mb-3">
         <label for="offer_photo_box">
           Offer photo
         </label>
 
-        <input type="text" id="offer_photo_box" name="query_offer_photo">
+        <input type="text" id="offer_photo_box" name="query_offer_photo" class="form-control">
       </div>
 
-      <button>
+      <button class="btn btn-primary">
         Create offer
       </button>
     </form>

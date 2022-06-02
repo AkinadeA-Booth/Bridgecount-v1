@@ -1,6 +1,6 @@
 <div>
   <div>
-    <h1>
+    <h1 class="display-3">
       List of all accepted offers
     </h1>
   </div>
@@ -10,155 +10,171 @@
 
 <div>
   <div>
-    <h2>
-      Add a new accepted offer
+    <h2 class="display-6">
+      <small class="text-muted">Add a new </small> accepted offer
     </h2>
 
     <form action="/insert_accepted_offer" method="post">
 
       <div>
-        <select name="query_company_id" id="company_id_box">
+        <div class="row g-2">
+          <div class="col-md">
+            <div class="form-floating">
+              <select name="query_company_id" id="company_id_box" div class="form-select">
 
-          <%= Offer.all.order(:name).each do |an_offer| %>
+                <%= Offer.all.order(:name).each do |an_offer| %>
 
-            <option type="text" id="offer_id_box" name="query_offer_id">
-              <%= an_offer.offer_name%>
-            </option>
-          <% end %>
-        </select>
-               <label for="offer_id_box">
-          Offer
-        </label>
-      </div>
+                  <option type="text" id="offer_id_box" name="query_offer_id">
+                    <%= an_offer.offer_name%>
+                  </option>
+                <% end %>
+              </select>
+              <label for="offer_id_box">
+                Offer
+              </label>
+            </div>
+          </div>
 
-  <div>
-    <select name="query_company_id" id="company_id_box">
+          <div class="col-md">
+            <div class="form-floating">
+              <select name="query_company_id" id="company_id_box" class="form-select">
 
-    <%= Company.all.order(:name).each do |a_company| %>
-        
-      <option type="text" id="company_id_box" name="query_company_id"> 
-          <%= a_company.name%>
-      </option>
-      <% end %>
-    </select>
+                <%= Company.all.order(:name).each do |a_company| %>
 
-      <label for="company_id_box">Which one of our member companies are you part of?</label>
+                  <option type="text" id="company_id_box" name="query_company_id">
+                    <%= a_company.name%>
+                  </option>
+                <% end %>
+              </select>
+
+              <label for="company_id_box">Which one of our member companies are you part of?</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md">
+            <div class="form-floating">
+              <div>
+                <label for="offer_start_box">
+                  Offer start
+                </label>
+
+                <input type="datetime-local" id="offer_start_box" name="query_offer_start" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <div>
+                <label for="offer_end_box">
+                  Offer end
+                </label>
+
+                <input type="datetime-local" id="offer_end_box" name="query_offer_end" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="number_of_redeems_box">
+            Number of redeems
+          </label>
+
+          <input type="text" id="number_of_redeems_box" name="query_number_of_redeems">
+        </div>
+
+        <button class="btn btn-primary">
+          Create accepted offer
+        </button>
+      </form>
+    </div>
   </div>
 
-      <div>
-        <label for="offer_start_box">
-          Offer start
-        </label>
-
-        <input type="datetime-local" id="offer_start_box" name="query_offer_start">
-      </div>
-
-      <div>
-        <label for="offer_end_box">
-          Offer end
-        </label>
-
-        <input type="datetime-local" id="offer_end_box" name="query_offer_end">
-      </div>
-
-      <div>
-        <label for="number_of_redeems_box">
-          Number of redeems
-        </label>
-
-        <input type="text" id="number_of_redeems_box" name="query_number_of_redeems">
-      </div>
-
-      <button>
-        Create accepted offer
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
-<div>
+  <hr>
   <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Offer
-        </th>
-
-        <th>
-          Company
-        </th>
-
-        <th>
-          Offer start
-        </th>
-
-        <th>
-          Offer end
-        </th>
-
-        <th>
-          Number of redeems
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_accepted_offers.each do |an_accepted_offer| %>
+    <div>
+      <table border="1" class="table table-hover">
         <tr>
-          <td>
-            <%= an_accepted_offer.id %>
-          </td>
+          <th>
+            ID
+          </th>
 
-          <td>
-            <%= an_accepted_offer.offer.offer_name %>
-          </td>
+          <th>
+            Offer
+          </th>
 
-          <td>
-            <%= an_accepted_offer.company_id %>
-          </td>
+          <th>
+            Company
+          </th>
 
-          <td>
-            <%= an_accepted_offer.offer_start %>
-          </td>
+          <th>
+            Offer start
+          </th>
 
-          <td>
-            <%= an_accepted_offer.offer_end %>
-          </td>
+          <th>
+            Offer end
+          </th>
 
-          <td>
-            <%= an_accepted_offer.number_of_redeems %>
-          </td>
+          <th>
+            Number of redeems
+          </th>
 
-          <td>
-            <%= time_ago_in_words(an_accepted_offer.created_at) %> ago
-          </td>
-          <td>
-            <%= time_ago_in_words(an_accepted_offer.updated_at) %> ago
-          </td>
+          <th>
+            Created at
+          </th>
 
-          <td>
-            <a href="/accepted_offers/<%= an_accepted_offer.id %>">
-              Show details
-            </a>
-          </td>
+          <th>
+            Updated at
+          </th>
+
+          <th>
+          </th>
         </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
 
-<hr>
+        <% @list_of_accepted_offers.each do |an_accepted_offer| %>
+          <tr>
+            <td>
+              <%= an_accepted_offer.id %>
+            </td>
+
+            <td>
+              <%= an_accepted_offer.offer.offer_name %>
+            </td>
+
+            <td>
+              <%= an_accepted_offer.company_id %>
+            </td>
+
+            <td>
+              <%= an_accepted_offer.offer_start %>
+            </td>
+
+            <td>
+              <%= an_accepted_offer.offer_end %>
+            </td>
+
+            <td>
+              <%= an_accepted_offer.number_of_redeems %>
+            </td>
+
+            <td>
+              <%= time_ago_in_words(an_accepted_offer.created_at) %> ago
+            </td>
+            <td>
+              <%= time_ago_in_words(an_accepted_offer.updated_at) %> ago
+            </td>
+
+            <td>
+              <a href="/accepted_offers/<%= an_accepted_offer.id %>">
+                Show details
+              </a>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+  <hr>
