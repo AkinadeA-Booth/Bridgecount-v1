@@ -1,8 +1,10 @@
 <div>
   <div>
     <h1>
-      All your offers #<%= @the_users_leveraging_accepted_offer.id %> details
+      All your <%= @the_users_leveraging_accepted_offer.accepted_offer.offer.offer_name %> offer details
     </h1>
+
+<hr>
 
     <div>
       <div>
@@ -48,47 +50,6 @@
         <%= time_ago_in_words(@the_users_leveraging_accepted_offer.updated_at) %> ago
       </dd>
     </dl>
-  </div>
-</div>
-
-<hr>
-
-
-<div>
-  <div>
-    <h2>
-      Edit users leveraging accepted offer
-    </h2>
-
-    <form action="/modify_users_leveraging_accepted_offer/<%= @the_users_leveraging_accepted_offer.id %>"  method="post" >
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_users_leveraging_accepted_offer.user_id %>">
-      </div>
-
-      <div>
-        <label for="accepted_offer_id_box">
-          Accepted offer
-        </label>
-
-        <input type="text" id="accepted_offer_id_box" name="query_accepted_offer_id" value="<%= @the_users_leveraging_accepted_offer.accepted_offer_id %>">
-      </div>
-
-      <div>
-        <label for="number_of_times_redeemed_box">
-          Number of times redeemed
-        </label>
-
-        <input type="text" id="number_of_times_redeemed_box" name="query_number_of_times_redeemed" value="<%= @the_users_leveraging_accepted_offer.number_of_times_redeemed %>">
-      </div>
-
-      <button>
-        Update users leveraging accepted offer
-      </button>
-    </form>
   </div>
 </div>
 

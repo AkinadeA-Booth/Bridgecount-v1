@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1 class="display-3">
-      Offers available to you
+      Offers available to your company
     </h1>
   </div>
 </div>
@@ -41,7 +41,9 @@
 
                   <%= Company.all.order(:name).each do |a_company| %>
 
-                    <option type="text" id="company_id_box" name="query_company_id" value="<%= a_company.id %>">
+                    <option type="text" id="company_id_box" name="query_company_id" value="<%= a_company.id %>" 
+                    <%= "selected" if @current_user.company_id == a_company.id %>
+                    >
                       <%= a_company.name%>
                     </option>
                   <% end %>

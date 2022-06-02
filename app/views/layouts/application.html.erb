@@ -28,7 +28,7 @@
   </head>
   <nav >
     <ul class="nav">
-      <% if @current_user == nil %> (not signed in)
+      <% if @current_user == nil %> 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/user_sign_up">Sign up</a>
         </li>
@@ -36,7 +36,7 @@
           <a class="nav-link" href="/user_sign_in">Sign in</a>
         </li>
 
-      <% elsif @current_user != nil && @current_user.company_admin_true_or_false == true %> (signed in admin)
+      <% elsif @current_user != nil && @current_user.company_admin_true_or_false == true %> 
         <li class="nav-item">
           <a class="nav-link" href="/accepted_offers">All offers available</a>
         </li>
@@ -48,7 +48,7 @@
         </li>
 
       <% elsif @current_user != nil && @current_user.smallbiz == true %>
-        <li class="nav-item"> (signed in small biz)
+        <li class="nav-item"> 
           <a class="nav-link" href="/offers">All offers available</a>
         </li>
         <li class="nav-item">
@@ -59,7 +59,8 @@
           <a class="nav-link disabled" href="/user_sign_out">Sign out</a>
         </li>
 
-      <% else %> (not a small biz and not a company)
+
+      <% else %> 
         <li class="nav-item">
           <a class="nav-link" href="/users_leveraging_accepted_offers"><%= @current_user.first_name%>'s offers</a>
         </li>

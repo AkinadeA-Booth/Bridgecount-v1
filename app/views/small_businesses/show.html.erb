@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Small business #<%= @the_small_business.id %> details
+       <%= @the_small_business.small_business_name %> details
     </h1>
 
     <div>
@@ -62,18 +62,12 @@
       </dd>
 
       <dt>
-        Created at
+        Joined 
       </dt>
       <dd>
         <%= time_ago_in_words(@the_small_business.created_at) %> ago
       </dd>
 
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_small_business.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>
