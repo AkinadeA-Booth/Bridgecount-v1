@@ -7,7 +7,6 @@
 </div>
 
 <hr>
-<%= @current_user.inspect %>
 <div>
   <% if @current_user.company_admin_true_or_false == true %>
     <div>
@@ -123,7 +122,7 @@
               </td>
 
               <td>
-                <%= an_accepted_offer.company_name %>
+                <%= an_accepted_offer.company.name %>
               </td>
 
               <td>

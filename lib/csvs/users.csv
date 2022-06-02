@@ -1,6 +1,6 @@
 id,created_at,updated_at,first_name,last_name,email,password,company_id,company_admin_true_or_false,small_business_owner
 1,,,Vikram,Venkat,vvenkat@chicagobooth.edu,Password123,1,True,False
-2,,,Akinade,Aderele,akinaderele@chicagobooth.edu,Akinade@2022,2,False,False
+2,,,Akinade,Aderele,akinaderele@chicagobooth.edu,password,2,False,False
 3,,,Jessie,Wang,jessiew@chicagobooth.edu,Mx4!#rnP7j,2,False,True
 4,,,Kofi,Amoako-Gyan,vvenkat@uchicago.edu,Welcome2Kofi!,1,True,False
 5,,,Aditya,Joshi,vikram.venkat@gmail.com,i<3Gunda,3,True,False
