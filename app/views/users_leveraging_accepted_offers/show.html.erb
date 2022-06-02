@@ -13,17 +13,17 @@
 
       <div>
         <a href="/delete_users_leveraging_accepted_offer/<%= @the_users_leveraging_accepted_offer.id %>">
-          Delete users leveraging accepted offer
+          Stop using this offer :(
         </a>
       </div>
     </div>
 
     <dl>
       <dt>
-        User
+        Hello!
       </dt>
       <dd>
-        <%= @the_users_leveraging_accepted_offer.user_id %>
+        <%= @the_users_leveraging_accepted_offer.user.first_name %>, <%= @the_users_leveraging_accepted_offer.user.last_name %>
       </dd>
 
       <dt>
@@ -35,14 +35,14 @@
 
 
       <dt>
-        Created at
+        Started using this offer
       </dt>
       <dd>
         <%= time_ago_in_words(@the_users_leveraging_accepted_offer.created_at) %> ago
       </dd>
 
       <dt>
-        Updated at
+        Updated this offer
       </dt>
       <dd>
         <%= time_ago_in_words(@the_users_leveraging_accepted_offer.updated_at) %> ago
