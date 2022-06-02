@@ -26,36 +26,36 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 
   </head>
-  <nav>
-    <ul>
+  <nav >
+    <ul class="nav">
       <% if @current_user == nil %>
-        <li>
-          <a href="/user_sign_up">Sign up</a>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user_sign_up">Sign up</a>
         </li>
-        <li>
-          <a href="/user_sign_in">Sign in</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_in">Sign in</a>
         </li>
 
-        <li>
-          <a href="/companies">Companies</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/companies">Companies</a>
         </li>
-        <li>
-          <a href="/users_leveraging_accepted_offers">Offers being used</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/users_leveraging_accepted_offers">Offers being used</a>
         </li>
       <% elsif @current_user != nil && @current_user.company_admin_true_or_false == true %>
-        <li>
-          <a href="/offers">All offers available</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/offers">All offers available</a>
         </li>
-        <li>
-          <a href="/accepted_offers"><%= @current_user.first_name%>'s offers</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/accepted_offers"><%= @current_user.first_name%>'s offers</a>
         </li>
 
       <% else %>
-        <li>
-          <a href="/users_leveraging_accepted_offers"><%= @current_user.first_name%>'s offers</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/users_leveraging_accepted_offers"><%= @current_user.users.first_name%>'s offers</a>
         </li>
-        <li>
-          <a href="/user_sign_out">Sign out</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_out">Sign out</a>
         </li>
 
       <% end %>

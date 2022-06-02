@@ -100,8 +100,8 @@ namespace :slurp do
       u.created_at = row["created_at"]
       u.updated_at = row["updated_at"]
       u.company_id = row["company_id"]
-      u.first_name = row["first_name "]
-      u.last_name = row["last_name "]
+      u.first_name = row["first_name"]
+      u.last_name = row["last_name"]
       u.smallbiz = row["small_business_owner"]
 
       u.save

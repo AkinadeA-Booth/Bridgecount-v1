@@ -3,152 +3,153 @@
     <h1>
       Accepted offer #<%= @the_accepted_offer.id %> details
     </h1>
-    #####
+
     <form action="/insert_users_leveraging_accepted_offer" method="post">
 
       <div>
         <input type="hidden" id="the_accepted_offer_id_box" name="query_accepted_offer_id" value="<%= @the_accepted_offer.id %>">
       </div>
-      
- 
-        <input type="hidden" id="the_user_id_box" name="query_user_id" value="<%= @current_user.id %>">
-      </div>
 
+      <input type="hidden" id="the_user_id_box" name="query_user_id" value="<%= @current_user.id %>">
+    </div>
 
-        <div>
+    <div>
 
-          <input type="hidden" id="number_of_redeems_box" name="query_number_of_redeems" value = "not enough">
-        </div>
+      <input type="hidden" id="number_of_redeems_box" name="query_number_of_redeems" value = "not enough">
+    </div>
 
-        <button>
-          Select Offer
-        </button>
-      </form>
+    <button class="btn btn-outline-primary">
+      Select Offer
+    </button>
+  </form>
 
-      #####
-      <div>
-        <div>
-          <a href="/accepted_offers">
-            Go back
-          </a>
-        </div>
+  <div>
+    <div>
+      <a href="/accepted_offers">
+        Go back
+      </a>
+    </div>
 
-        <div>
-          <a href="/delete_accepted_offer/<%= @the_accepted_offer.id %>">
-            Delete accepted offer
-          </a>
-        </div>
-      </div>
+    <div>
+      <a href="/delete_accepted_offer/<%= @the_accepted_offer.id %>">
+        Delete accepted offer
+      </a>
+    </div>
+  </div>
 
-      <dl>
-        <dt>
+  <div class="row g-2">
+    <div class="col-md">
+      <dl class="card">
+        <dt class="card-header">
           Offer
         </dt>
-        <dd>
+        <dd class="card-text">
           <%= @the_accepted_offer.offer_id %>
         </dd>
 
-        <dt>
+        <dt class="card-title">
           Company
         </dt>
-        <dd>
+        <dd class="card-text">
           <%= @the_accepted_offer.company_id %>
         </dd>
 
-        <dt>
+        <dt class="card-title">
           Offer start
         </dt>
-        <dd>
+        <dd class="card-text">
           <%= @the_accepted_offer.offer_start %>
         </dd>
 
-        <dt>
+        <dt class="card-title">
           Offer end
         </dt>
-        <dd>
+        <dd class="card-text">
           <%= @the_accepted_offer.offer_end %>
         </dd>
 
-        <dt>
+        <dt class="card-title">
           Number of redeems
         </dt>
-        <dd>
+        <dd class="card-text">
           <%= @the_accepted_offer.number_of_redeems %>
         </dd>
 
-        <dt>
+        <dt class="card-title">
           Created at
         </dt>
-        <dd>
+        <dd class="card-text">
           <%= time_ago_in_words(@the_accepted_offer.created_at) %> ago
         </dd>
 
-        <dt>
+        <dt class="card-title">
           Updated at
         </dt>
-        <dd>
+        <dd class="card-text">
           <%= time_ago_in_words(@the_accepted_offer.updated_at) %> ago
         </dd>
       </dl>
     </div>
   </div>
+</div>
 
-  <hr>
 
+<hr>
+
+<div>
   <div>
-    <div>
-      <h2>
-        Edit accepted offer
-      </h2>
+    <h2>
+      Edit accepted offer
+    </h2>
 
-      <form action="/modify_accepted_offer/<%= @the_accepted_offer.id %>"  method="post" >
-        <div>
-          <label for="offer_id_box">
-            Offer
-          </label>
+    <form action="/modify_accepted_offer/<%= @the_accepted_offer.id %>"  method="post" >
+      <div>
+        <label for="offer_id_box">
+          Offer
+        </label>
 
-          <input type="text" id="offer_id_box" name="query_offer_id" value="<%= @the_accepted_offer.offer_id %>">
-        </div>
+        <input type="text" id="offer_id_box" name="query_offer_id" value="<%= @the_accepted_offer.offer_id %>">
+      </div>
 
-        <div>
-          <label for="company_id_box">
-            Company
-          </label>
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
 
-          <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_accepted_offer.company_id %>">
-        </div>
+        <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_accepted_offer.company_id %>">
+      </div>
 
-        <div>
-          <label for="offer_start_box">
-            Offer start
-          </label>
+      <div>
+        <label for="offer_start_box">
+          Offer start
+        </label>
 
-          <input type="datetime-local" id="offer_start_box" name="query_offer_start"
+        <input type="datetime-local" id="offer_start_box" name="query_offer_start"
          value="<%= @the_accepted_offer.offer_start %>">
-        </div>
+      </div>
 
-        <div>
-          <label for="offer_end_box">
-            Offer end
-          </label>
+      <div>
+        <label for="offer_end_box">
+          Offer end
+        </label>
 
-          <input type="datetime-local" id="offer_end_box" name="query_offer_end"
+        <input type="datetime-local" id="offer_end_box" name="query_offer_end"
          value="<%= @the_accepted_offer.offer_end %>">
-        </div>
+      </div>
 
-        <div>
-          <label for="number_of_redeems_box">
-            Number of redeems
-          </label>
+      <div>
+        <label for="number_of_redeems_box">
+          Number of redeems
+        </label>
 
-          <input type="text" id="number_of_redeems_box" name="query_number_of_redeems" value="<%= @the_accepted_offer.number_of_redeems %>">
-        </div>
+        <input type="text" id="number_of_redeems_box" name="query_number_of_redeems" value="<%= @the_accepted_offer.number_of_redeems %>">
+      </div>
 
-        <button>
-          Update accepted offer
-        </button>
-      </form>
-    </div>
+      <button>
+        Update accepted offer
+      </button>
+    </form>
   </div>
+</div>
 
-  <hr>
+<hr>
