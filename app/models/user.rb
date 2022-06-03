@@ -23,5 +23,7 @@ class User < ApplicationRecord
 
   belongs_to(:company, { :required => true, :class_name => "Company", :foreign_key => "company_id" })
 
+
   validates(:company_admin_true_or_false, { :presence => true })
+
 end
