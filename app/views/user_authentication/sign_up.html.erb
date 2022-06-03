@@ -12,7 +12,7 @@
 
     <%= Company.all.order(:name).each do |a_company| %>
         
-      <option type="text" id="company_id_box" name="query_company_id"> 
+      <option type="text" id="company_id_box" name="query_company_id" value="<%=a_company.id %>"> 
           <%= a_company.name%>
       </option>
       <% end %>
@@ -22,9 +22,10 @@
   </div>
          
   <div>
-    <label for="company_admin_true_or_false_box">Company admin true or false</label>
+    <label for="company_admin_true_or_false_box">Are you your company's admin?</label>
     <input id="company_admin_true_or_false_box" name="query_company_admin_true_or_false" type="checkbox">
   </div>
+
          
   <div>
     <label for="photo_box">Photo</label>
